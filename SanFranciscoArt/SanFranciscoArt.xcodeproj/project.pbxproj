@@ -14,10 +14,10 @@
 		003C45281C8114E300701899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003C45261C8114E300701899 /* LaunchScreen.storyboard */; };
 		003C45331C8114E300701899 /* SanFranciscoArtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C45321C8114E300701899 /* SanFranciscoArtTests.swift */; };
 		003C453E1C8114E400701899 /* SanFranciscoArtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C453D1C8114E400701899 /* SanFranciscoArtUITests.swift */; };
-		003C454E1C811F3800701899 /* sfpublicart.json in Resources */ = {isa = PBXBuildFile; fileRef = 003C454D1C811F3800701899 /* sfpublicart.json */; };
 		003C45501C8120A700701899 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C454F1C8120A700701899 /* Artwork.swift */; };
 		003C45521C81223C00701899 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C45511C81223C00701899 /* VCMapView.swift */; };
-		003C45541C81249700701899 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C45531C81249700701899 /* JSON.swift */; };
+		003C455A1C8266DD00701899 /* sfPublicArt.csv in Resources */ = {isa = PBXBuildFile; fileRef = 003C45591C8266DD00701899 /* sfPublicArt.csv */; };
+		A9B7B73292C42CCC777AE0E0 /* Pods_SanFranciscoArt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDB6EB92D03F892C4B1E5E9 /* Pods_SanFranciscoArt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,12 @@
 		003C45391C8114E300701899 /* SanFranciscoArtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanFranciscoArtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		003C453D1C8114E400701899 /* SanFranciscoArtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanFranciscoArtUITests.swift; sourceTree = "<group>"; };
 		003C453F1C8114E400701899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		003C454D1C811F3800701899 /* sfpublicart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sfpublicart.json; sourceTree = "<group>"; };
 		003C454F1C8120A700701899 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		003C45511C81223C00701899 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
-		003C45531C81249700701899 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		003C45591C8266DD00701899 /* sfPublicArt.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sfPublicArt.csv; sourceTree = "<group>"; };
+		928B7A97B9482C0A01D9B6D5 /* Pods-SanFranciscoArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanFranciscoArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanFranciscoArt/Pods-SanFranciscoArt.release.xcconfig"; sourceTree = "<group>"; };
+		93BEA43CAF587F2150AA022B /* Pods-SanFranciscoArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanFranciscoArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanFranciscoArt/Pods-SanFranciscoArt.debug.xcconfig"; sourceTree = "<group>"; };
+		FEDB6EB92D03F892C4B1E5E9 /* Pods_SanFranciscoArt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SanFranciscoArt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B7B73292C42CCC777AE0E0 /* Pods_SanFranciscoArt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +93,8 @@
 				003C45311C8114E300701899 /* SanFranciscoArtTests */,
 				003C453C1C8114E400701899 /* SanFranciscoArtUITests */,
 				003C451B1C8114E300701899 /* Products */,
+				97B20B2D8300F1D1FD44197B /* Pods */,
+				69A7E95C233B9E50D11BE6F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,7 +111,6 @@
 		003C451C1C8114E300701899 /* SanFranciscoArt */ = {
 			isa = PBXGroup;
 			children = (
-				003C45531C81249700701899 /* JSON.swift */,
 				003C454F1C8120A700701899 /* Artwork.swift */,
 				003C45511C81223C00701899 /* VCMapView.swift */,
 				003C451D1C8114E300701899 /* AppDelegate.swift */,
@@ -140,9 +144,26 @@
 		003C454C1C811EDC00701899 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				003C454D1C811F3800701899 /* sfpublicart.json */,
+				003C45591C8266DD00701899 /* sfPublicArt.csv */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69A7E95C233B9E50D11BE6F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEDB6EB92D03F892C4B1E5E9 /* Pods_SanFranciscoArt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97B20B2D8300F1D1FD44197B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93BEA43CAF587F2150AA022B /* Pods-SanFranciscoArt.debug.xcconfig */,
+				928B7A97B9482C0A01D9B6D5 /* Pods-SanFranciscoArt.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 003C45421C8114E400701899 /* Build configuration list for PBXNativeTarget "SanFranciscoArt" */;
 			buildPhases = (
+				8255DBBEA12A5B9E5DD56A34 /* Check Pods Manifest.lock */,
 				003C45161C8114E300701899 /* Sources */,
 				003C45171C8114E300701899 /* Frameworks */,
 				003C45181C8114E300701899 /* Resources */,
+				723377D111929B79CF51AAFF /* Embed Pods Frameworks */,
+				671884B805784249123D2DEF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,10 +276,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003C455A1C8266DD00701899 /* sfPublicArt.csv in Resources */,
 				003C45281C8114E300701899 /* LaunchScreen.storyboard in Resources */,
 				003C45251C8114E300701899 /* Assets.xcassets in Resources */,
 				003C45231C8114E300701899 /* Main.storyboard in Resources */,
-				003C454E1C811F3800701899 /* sfpublicart.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,13 +299,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		671884B805784249123D2DEF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SanFranciscoArt/Pods-SanFranciscoArt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		723377D111929B79CF51AAFF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SanFranciscoArt/Pods-SanFranciscoArt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8255DBBEA12A5B9E5DD56A34 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		003C45161C8114E300701899 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				003C45521C81223C00701899 /* VCMapView.swift in Sources */,
-				003C45541C81249700701899 /* JSON.swift in Sources */,
 				003C45201C8114E300701899 /* ViewController.swift in Sources */,
 				003C45501C8120A700701899 /* Artwork.swift in Sources */,
 				003C451E1C8114E300701899 /* AppDelegate.swift in Sources */,
@@ -422,6 +493,7 @@
 		};
 		003C45431C8114E400701899 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93BEA43CAF587F2150AA022B /* Pods-SanFranciscoArt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SanFranciscoArt/Info.plist;
@@ -433,6 +505,7 @@
 		};
 		003C45441C8114E400701899 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 928B7A97B9482C0A01D9B6D5 /* Pods-SanFranciscoArt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SanFranciscoArt/Info.plist;
@@ -509,6 +582,7 @@
 				003C45441C8114E400701899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		003C45451C8114E400701899 /* Build configuration list for PBXNativeTarget "SanFranciscoArtTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +591,7 @@
 				003C45471C8114E400701899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		003C45481C8114E400701899 /* Build configuration list for PBXNativeTarget "SanFranciscoArtUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +600,7 @@
 				003C454A1C8114E400701899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

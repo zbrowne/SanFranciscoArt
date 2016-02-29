@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SwiftCSV
 
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
@@ -32,38 +33,27 @@ class ViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
+    
     func loadInitialData() {
-        // 1
-        let fileName = NSBundle.mainBundle().pathForResource("PublicArt", ofType: "json");
-        var data : NSData?
+        let fileName = NSBundle.mainBundle().pathForResource("sfPublicArt", ofType: "csv");
+        var data: String?
+//        NSLog("fileName: %@", fileName!)
         do {
-            data = try NSData(contentsOfFile: fileName!, options: NSDataReadingOptions(rawValue: 0))
+            data = try String(contentsOfFile: fileName!)
         } catch _ {
             data = nil
+            NSLog("unable to open file")
+        }
+
+        if let _ = data {
+            let csv = CSV(string: data!)
+            let header = csv.header
+            let rows = csv.rows
+            print (header)
+            print (rows[1])
         }
         
-        // 2
-        let jsonObject: AnyObject!
-        
-        do {
-            jsonObject = try NSJSONSerialization.JSONObjectWithData(data!,
-                options: NSJSONReadingOptions(rawValue: 0))
-        } catch _ {
-            jsonObject = nil
         }
-        
-        // 3
-        if let jsonObject = jsonObject as? [String: AnyObject],
-            // 4
-            let jsonData = JSONValue.fromObject(jsonObject)?["data"]?.array {
-                for artworkJSON in jsonData {
-                    if let artworkJSON = artworkJSON.array,
-                        // 5
-                        artwork = Artwork.fromJSON(artworkJSON) {
-                            artworks.append(artwork)
-                    }
-                }
         }
-    }
-}
+
 

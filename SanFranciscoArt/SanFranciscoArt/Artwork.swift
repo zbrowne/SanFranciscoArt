@@ -25,25 +25,26 @@ class Artwork: NSObject, MKAnnotation {
         super.init()
     }
     
-    class func fromJSON(json: [JSONValue]) -> Artwork? {
+    // read csv dictionary here
+/*    class func fromCSV(csv: [[String: String]]) -> Artwork? {
         // 1
         var title: String
-        if let titleOrNil = json[16].string {
+        if let titleOrNil =  {
             title = titleOrNil
         } else {
             title = ""
         }
-        let locationName = json[12].string
-        let discipline = json[15].string
+        let locationName = csv[12].string
+        let discipline = csv[15].string
         
         // 2
-        let latitude = (json[18].string! as NSString).doubleValue
-        let longitude = (json[19].string! as NSString).doubleValue
+        let latitude = (csv[18].string! as NSString).doubleValue
+        let longitude = (csv[19].string! as NSString).doubleValue
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         // 3
         return Artwork(title: title, locationName: locationName!, discipline: discipline!, coordinate: coordinate)
-    }
+    } */
     
     var subtitle: String? {
         return locationName
