@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import SwiftCSV
+import CSwiftV
 
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
             regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-
     
     func loadInitialData() {
         let fileName = NSBundle.mainBundle().pathForResource("sfPublicArt", ofType: "csv");
@@ -46,13 +45,12 @@ class ViewController: UIViewController {
         }
 
         if let _ = data {
-            let csv = CSV(string: data!)
-            let header = csv.header
+            let inputString = data
+            let csv = CSwiftV(String: inputString!)
             let rows = csv.rows
-            print (header)
-            print (rows[1])
-        }
-        
+            let headers = csv.headers
+            let artworkDict = csv.keyedRows
+            }
         }
         }
 

@@ -13,38 +13,33 @@ import Contacts
 class Artwork: NSObject, MKAnnotation {
     let title: String?
     let locationName: String
-    let discipline: String
+    let medium: String
     let coordinate: CLLocationCoordinate2D
     
-    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, locationName: String, medium: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
         self.locationName = locationName
-        self.discipline = discipline
+        self.medium = medium
         self.coordinate = coordinate
         
         super.init()
     }
     
-    // read csv dictionary here
-/*    class func fromCSV(csv: [[String: String]]) -> Artwork? {
+    // read csv dictionary here. TODO: Make this work...
+    class func fromCSV(csv: [[String:String]]?) -> Artwork? {
         // 1
-        var title: String
-        if let titleOrNil =  {
-            title = titleOrNil
-        } else {
-            title = ""
-        }
-        let locationName = csv[12].string
-        let discipline = csv[15].string
+        let title = csv![1]["title"]
+        let locationName = csv![1]["location_description"]
+        let medium = csv![1]["medium"]
         
         // 2
-        let latitude = (csv[18].string! as NSString).doubleValue
-        let longitude = (csv[19].string! as NSString).doubleValue
+        let latitude = (csv![1]["geometry"]! as NSString).doubleValue
+        let longitude = (csv![1]["geometry"]! as NSString).doubleValue
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         // 3
-        return Artwork(title: title, locationName: locationName!, discipline: discipline!, coordinate: coordinate)
-    } */
+        return Artwork(title: title!, locationName: locationName!, medium: medium!, coordinate: coordinate)
+    }
     
     var subtitle: String? {
         return locationName
