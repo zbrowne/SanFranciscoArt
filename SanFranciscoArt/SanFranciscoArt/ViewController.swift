@@ -13,7 +13,7 @@ import CSwiftV
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var artworks = [Artwork]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,22 +36,34 @@ class ViewController: UIViewController {
     func loadInitialData() {
         let fileName = NSBundle.mainBundle().pathForResource("sfPublicArt", ofType: "csv");
         var data: String?
-//        NSLog("fileName: %@", fileName!)
+        //        NSLog("fileName: %@", fileName!)
         do {
             data = try String(contentsOfFile: fileName!)
         } catch _ {
             data = nil
             NSLog("unable to open file")
         }
-
+        
         if let _ = data {
             let inputString = data
             let csv = CSwiftV(String: inputString!)
-            let rows = csv.rows
-            let headers = csv.headers
             let artworkDict = csv.keyedRows
+            
+            // debugging with one value
+            let artwork = Artwork.fromCSV(artworkDict![1])
+            artworks.append(artwork!)
+            
+            
+            // full loop for when I'm done debuggint with one value
+            /* for artworkCSV in artworkDict! {
+            let artwork = Artwork.fromCSV(artworkCSV)
+            artworks.append(artwork!)
             }
+            } */
+            print (artworks)
         }
-        }
+    }
+}
+
 
 

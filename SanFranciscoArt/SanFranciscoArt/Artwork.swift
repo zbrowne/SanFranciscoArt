@@ -26,15 +26,25 @@ class Artwork: NSObject, MKAnnotation {
     }
     
     // read csv dictionary here. TODO: Make this work...
-    class func fromCSV(csv: [[String:String]]?) -> Artwork? {
+    class func fromCSV(csv: [String:String]) -> Artwork? {
         // 1
-        let title = csv![1]["title"]
-        let locationName = csv![1]["location_description"]
-        let medium = csv![1]["medium"]
+        let title = csv["title"]
+        let locationName = csv["location_description"]
+        let medium = csv["medium"]
         
-        // 2
-        let latitude = (csv![1]["geometry"]! as NSString).doubleValue
-        let longitude = (csv![1]["geometry"]! as NSString).doubleValue
+        
+        // pull coordinates from json object
+        let jsonData = csv["geometry"]!.dataUsingEncoding(NSUTF8StringEncoding)
+        var json: [String: AnyObject]!
+        
+        do {
+            json = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions()) as? [String:AnyObject]
+        } catch {
+            print("error")
+        }
+        
+        let longitude = (json["coordinates"]![0] as! NSString).doubleValue
+        let latitude = (json["coordinates"]![1] as! NSString).doubleValue
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         // 3
