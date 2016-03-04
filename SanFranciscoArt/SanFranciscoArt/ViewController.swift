@@ -49,21 +49,20 @@ class ViewController: UIViewController {
             let csv = CSwiftV(String: inputString!)
             let artworkDict = csv.keyedRows
             
-            // debugging with one value
-            let artwork = Artwork.fromCSV(artworkDict![1])
-            artworks.append(artwork!)
-            
-            
-            // full loop for when I'm done debuggint with one value
-            /* for artworkCSV in artworkDict! {
+            // I need help with this. It works if I delete the first line but it's throwing out the loop and fails
+            for artworkCSV in artworkDict! {
+                print (artworkCSV["title"])
+                if (artworkCSV["title"] == "title") {
+                    break
+                }
+                else {
             let artwork = Artwork.fromCSV(artworkCSV)
             artworks.append(artwork!)
+                }
             }
-            } */
-            print (artworks)
+            }
         }
     }
-}
 
 
 

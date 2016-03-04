@@ -27,6 +27,7 @@ class Artwork: NSObject, MKAnnotation {
     
     // read csv dictionary here. TODO: Make this work...
     class func fromCSV(csv: [String:String]) -> Artwork? {
+        
         // 1
         let title = csv["title"]
         let locationName = csv["location_description"]
@@ -43,8 +44,8 @@ class Artwork: NSObject, MKAnnotation {
             print("error")
         }
         
-        let longitude = (json["coordinates"]![0] as! NSString).doubleValue
-        let latitude = (json["coordinates"]![1] as! NSString).doubleValue
+        let longitude = (json["coordinates"]![0] as! NSNumber).doubleValue
+        let latitude = (json["coordinates"]![1] as! NSNumber).doubleValue
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         // 3
